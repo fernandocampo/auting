@@ -10,6 +10,14 @@
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
+    <%= f.input :city,
+                hint: "leave it blank if you don't want to change it",
+                required: false,
+                input_html: { autocomplete: "new-city" } %>
+    <%= f.input :phone,
+                hint: "leave it blank if you don't want to change it",
+                required: false,
+                input_html: { autocomplete: "new-phone" } %>
     <%= f.input :password,
                 hint: "leave it blank if you don't want to change it",
                 required: false,
