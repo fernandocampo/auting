@@ -1,5 +1,4 @@
 class CarsController < ApplicationController
-
   def index
     @cars = Car.all
   end
@@ -7,6 +6,7 @@ class CarsController < ApplicationController
   def show
     @car = Car.find(params[:id])
   end
+
   def new
     @car = Car.new
   end
@@ -16,7 +16,7 @@ class CarsController < ApplicationController
     if @car.save
       redirect_to @car
     else
-      render 'new'
+      render :new # status: unprocesable_entity
     end
   end
 
@@ -33,11 +33,14 @@ class CarsController < ApplicationController
     end
   end
 
+  def destroy
+    car.destroy
+    redirect_to @car
+  end
+
   private
 
   def car_params
     params.require(:car).permit(:brand, :model, :year, :cost_per_day)
   end
-
-
 end
