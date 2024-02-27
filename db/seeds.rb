@@ -10,6 +10,7 @@
 
 fernando = User.create(
   email: 'fernando@example.com',
+  user: 'fernando',
   password: '123456',
   name: 'Fernando',
   last_name: 'Campo',
@@ -20,9 +21,10 @@ fernando = User.create(
 
 antonio = User.create(
   email: 'antonio@example.com',
-  password: '123456',
-  name: 'Antonio',
-  last_name: 'Edwards',
+  user: 'antonio',
+  password: 'anto123',
+  name: 'antonio',
+  last_name: 'edwards',
   age: 31,
   city: 'Santiago Chile',
   phone: '987654321'
@@ -30,9 +32,10 @@ antonio = User.create(
 
 dario = User.create(
   email: 'dario@example.com',
-  password: '123456',
-  name: 'Dario',
-  last_name: 'Cardoso',
+  user: 'dario',
+  password: 'dario123',
+  name: 'dario',
+  last_name: 'cardoso',
   age: 34,
   city: 'CABA',
   phone: '111222333'
