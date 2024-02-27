@@ -1,1 +1,19 @@
 <h1>HOME</h1>
+
+<ul class="cards">
+  <% @cars.each do |car| %>
+    <li class="cards__item">
+      <div class="card">
+        <div><img src="<%= asset_path('auto.png') %>"/></div>
+        <div class="card__content">
+          <div class="card__title"><%= car.model %></div>
+          <p class="card__text"><%= car.brand %></p>
+          <p class="card__text"><%= car.year %></p>
+          <p class="card__text">U$S <%= car.cost_per_day %>0-</p>
+          <p class="card__text">Owner: <%= car.user.name %>, <%= car.user.last_name %></p>
+          <p class="card__text"><%= link_to "Make a Booking", "#" %></p>
+        </div>
+      </div>
+    </li>
+  <% end %>
+</ul>
