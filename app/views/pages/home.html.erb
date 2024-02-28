@@ -12,7 +12,8 @@
               <p><%= car.year %></p>
               <p>📍 <%= car.user.city %></p>
               <p>U$S <%= car.cost_per_day %>0- p/day</p>
-              <p>Owner: <%= car.user.name %>, <%= car.user.last_name %></p>
+              <p>Owner: <%= link_to <%= car.user.user %>, new_user_registration_path %></p>
+              <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
               <p><%= link_to "Make a Booking", "#" %></p>
             </div>
           </div>
