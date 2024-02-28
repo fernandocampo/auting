@@ -29,7 +29,7 @@
 #   age: 31,
 #   city: 'Santiago Chile',
 #   phone: '987654321'
-# )
+#  )
 
 # dario = User.create(
 #   email: 'dario@example.com',
