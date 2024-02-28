@@ -49,18 +49,31 @@
 # Car.create(brand: 'BMW', model: 'M3', year: 2023, cost_per_day: 250, user: dario)
 require 'faker'
 
-puts 'Creating 20 fake users...'
-20.times do
-  user = User.create(
-    email: Faker::Internet.email,
-    user: Faker::Internet.user,
-    password: Faker::Internet.password,
-    name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    city: Faker::Address.city,
-    phone: Faker::PhoneNumber.cell_phone,
-    age: rand(18..99)
+# puts 'Creating 20 fake users...'
+# 20.times do
+#   user = User.create(
+#     email: Faker::Internet.email,
+#     user: Faker::Internet.user,
+#     password: Faker::Internet.password,
+#     name: Faker::Name.first_name,
+#     last_name: Faker::Name.last_name,
+#     city: Faker::Address.city,
+#     phone: Faker::PhoneNumber.cell_phone,
+#     age: rand(18..99)
+#   )
+#   user.save!
+# end
+# puts 'Finished!'
+
+puts 'Creating 50 fake cars...'
+50.times do
+  user = Car.create(
+    brand: Faker::Vehicle.make,
+    model: Faker::Vehicle.model,
+    year: Faker::Vehicle.year,
+    cost_per_day: rand(30..250),
+    user_id: rand(1..20)
   )
-  user.save
+  user.save!
 end
 puts 'Finished!'
