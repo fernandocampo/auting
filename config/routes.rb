@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'booking/index'
+  get 'booking/show'
+  get 'booking/new'
+  get 'booking/create'
+  get 'booking/edit'
+  get 'booking/update'
+  get 'booking/destroy'
 
   devise_for :users
   resources :cars
