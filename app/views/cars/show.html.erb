@@ -1,5 +1,18 @@
 <h1>Detalles del Coche</h1>
 
-<p><strong>Modelo:</strong> <%= @car.model %></p>
-<p><strong>Marca:</strong> <%= @car.brand %></p>
-<p><strong>Año:</strong> <%= @car.year %></p>
+<div class="container">
+  <div class="card" style="width: 18rem;">
+    <img class="bd-placeholder-img card-img-top" width="100%" height="180" src="<%= asset_path('auto.png') %>" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+    <div class="card-body">
+      <h5 class="card-title">Modelo:<%= @car.model %></h5>
+      <p class="card-text">Marca:</strong> <%= @car.brand %></p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Año:</strong> <%= @car.year %></li>
+    </ul>
+    <div class="card-body">
+      <a href="#" class="card-link">1</a>
+      <a href="#" class="card-link">2</a>
+    </div>
+  </div>
+</div>
