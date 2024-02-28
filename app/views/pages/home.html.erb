@@ -10,7 +10,8 @@
             <h1><%= car.model %></h1>
             <h2><%= car.brand %></h2>
             <p><%= car.year %></p>
-            <p>U$S <%= car.cost_per_day %>0-</p>
+            <p>📍 <%= car.user.city %></p>
+            <p>U$S <%= car.cost_per_day %>0- p/day</p>
             <p>Owner: <%= car.user.name %>, <%= car.user.last_name %></p>
             <p><%= link_to "Make a Booking", "#" %></p>
           </div>
