@@ -2,21 +2,20 @@
 
 <div class="container text-center">
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
-    <div class="col"></div>
       <% @cars.each do |car| %>
-        <div class="card px-2">
-          <img class="card-img-top" src="<%= asset_path('auto.png') %>"/>
-          <div class="card-body">
-            <h1><%= car.model %></h1>
-            <h2><%= car.brand %></h2>
-            <p><%= car.year %></p>
-            <p>📍 <%= car.user.city %></p>
-            <p>U$S <%= car.cost_per_day %>0- p/day</p>
-            <p>Owner: <%= car.user.name %>, <%= car.user.last_name %></p>
-            <p><%= link_to "Make a Booking", "#" %></p>
+        <div class="col">
+          <div class="card px-2">
+            <img class="card-img-top" src="<%= asset_path('auto.png') %>"/>
+            <div class="card-body">
+              <h1><%= car.model %></h1>
+              <h2><%= car.brand %></h2>
+              <p><%= car.year %></p>
+              <p>U$S <%= car.cost_per_day %>0-</p>
+              <p>Owner: <%= car.user.name %>, <%= car.user.last_name %></p>
+              <p><%= link_to "Make a Booking", "#" %></p>
+            </div>
           </div>
         </div>
       <% end %>
-    </div>
   </div>
 </div>
