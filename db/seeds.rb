@@ -1,5 +1,5 @@
-
 require 'faker'
+
 puts 'Creating 3 usuarios personales'
 fernando = User.create(
   email: 'fernando@example.com',
@@ -26,6 +26,45 @@ antonio = User.create(
 dario = User.create(
   email: 'dario@example.com',
   user: 'Dario',
+  password: '123456',
+  name: 'Dario',
+  last_name: 'Cardoso',
+  age: 34,
+  city: 'CABA',
+  phone: '111222333'
+)
+
+# Crear los autos asociados a un usuario
+Car.create(brand: 'Honda', model: 'Accord', year: 2020, cost_per_day: 50, user_id: 1)
+Car.create(brand: 'Toyota', model: 'Hilux', year: 2023, cost_per_day: 70, user_id: 2)
+Car.create(brand: 'BMW', model: 'M3', year: 2023, cost_per_day: 250, user_id: 3)
+
+
+fernando = User.create(
+  email: 'fernando@example.com',
+  user: 'fernando',
+  password: '123456',
+  name: 'Fernando',
+  last_name: 'Campo',
+  age: 33,
+  city: 'CABA',
+  phone: '12345'
+)
+
+antonio = User.create(
+  email: 'antonio@example.com',
+  user: 'antonio',
+  password: 'anto123',
+  name: 'Antonio',
+  last_name: 'Edwards',
+  age: 31,
+  city: 'Santiago Chile',
+  phone: '987654321'
+ )
+
+dario = User.create(
+  email: 'dario@prueba.com',
+  user: 'dario',
   password: '123456',
   name: 'Dario',
   last_name: 'Cardoso',

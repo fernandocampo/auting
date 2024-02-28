@@ -12,5 +12,5 @@ class User < ApplicationRecord
   validates :age, presence: true
   validates :city, presence: true
   validates :phone, presence: true
-  validates :email, presence: true
+  validates :email, presence: true, uniqueness: true
 end
