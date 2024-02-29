@@ -1,2 +1,21 @@
 <h1>Bookings#new</h1>
-<p>Find me in app/views/bookings/new.html.erb</p>
+<h1>Complete</h1>
+<div class="container">
+<%= simple_form_for [@car, @booking] do |f| %>
+  <%= f.input :booking_date_start %>
+  <%= f.input :booking_date_finish %>
+  <%= f.submit %>
+<% end %>
+<br>
+<br>
+<%= link_to("Volver a las listas", "#") %>
+</div>
+<div class="container-2">
+  <div class="card-vehicle">
+    <h1><%= @car.model %></h1>
+    <p><%= @car.brand %></p>
+    <p><%= @car.year %></p>
+  </div>
+</div>
+</div>
+

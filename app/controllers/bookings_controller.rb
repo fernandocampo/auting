@@ -11,11 +11,11 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(params)
+    @booking = Booking.new(booking_params)
     @booking.car = @car
     @booking.user = current_user
     if @booking.save
-      redirect_to @booking
+      redirect_to root_path
     else
       render :new, status: :unprocessable_entity
     end
