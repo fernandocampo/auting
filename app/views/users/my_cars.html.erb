@@ -13,7 +13,6 @@
               <p>📍 <%= car.user.city %></p>
               <p>U$S <%= car.cost_per_day %>0- p/day</p>
               <p><%= link_to "Make a Booking", "#" %></p>
-               <%= button_to "Delete", car_path(car), method: :delete, data: { confirm: "Are you sure you want to delete this car?" }, class: "btn btn-danger" %>
             </div>
           </div>
         </div>
