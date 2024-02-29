@@ -5,4 +5,6 @@ class Booking < ApplicationRecord
   validates :booking_date_start, presence: true
   validates :booking_date_finish, presence: true
 
+  
+
 end

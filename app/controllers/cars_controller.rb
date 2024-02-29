@@ -16,7 +16,7 @@ class CarsController < ApplicationController
     if @car.save
       redirect_to @car
     else
-      render :new # status: unprocesable_entity
+      render :new, status: :unprocesable_entity
     end
   end
 
@@ -29,7 +29,7 @@ class CarsController < ApplicationController
     if @car.update(car_params)
       redirect_to @car
     else
-      render :edit
+      render :edit, status: :unprocesable_entity
     end
   end
 
