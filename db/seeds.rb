@@ -34,7 +34,7 @@ dario = User.create(
   phone: '111222333'
 )
 
-# Crear los autos asociados a un usuario
+# Crear los autos asociados a un usuario para probar nomas 
 Car.create(brand: 'Honda', model: 'Accord', year: 2020, cost_per_day: 50, user_id: 1)
 Car.create(brand: 'Toyota', model: 'Hilux', year: 2023, cost_per_day: 70, user_id: 2)
 Car.create(brand: 'BMW', model: 'M3', year: 2023, cost_per_day: 250, user_id: 3)
