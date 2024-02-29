@@ -1,4 +1,4 @@
-class BookingController < ApplicationController
+class BookingsController < ApplicationController
   before_action :set_car, except: [:index]
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
 
@@ -17,7 +17,7 @@ class BookingController < ApplicationController
     if @booking.save
       redirect_to @booking
     else
-      render :new,  status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
