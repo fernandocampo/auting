@@ -1,9 +1,9 @@
 <h1>HOME</h1>
 
- <%= form_with url: cars_path, method: :get, class: "d-flex" do %>
-        <%= text_field_tag :query, params[:query], class: "form-control me-2", placeholder: "Search Car" %>
-        <%= button_tag "Search", type: "submit", class: "btn btn-outline-success" %>
-      <% end %>
+ <%= form_with url: cars_path, method: :get, class: "my-custom-search-form" do %>
+  <%= text_field_tag :query, params[:query], class: "form-control my-custom-search-input", placeholder: "" %>
+  <%= button_tag "Search", type: "submit", class: "btn btn-primary my-custom-search-button" %>
+<% end %>
 
 <div class="container text-center">
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
