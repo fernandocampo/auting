@@ -12,7 +12,7 @@
           <div class="card px-2">
             <img class="card-img-top" src="<%= asset_path('auto.png') %>"/>
             <div class="card-body">
-              <h1><%= link_to car.model, car_path(car.user) %></h1>
+              <h1><%= link_to car.model, car_path(car) %></h1>
               <h2><%= car.brand %></h2>
               <p><%= car.year %></p>
               <p>📍 <%= car.user.city %></p>
