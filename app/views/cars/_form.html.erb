@@ -1,7 +1,25 @@
-<%= simple_form_for @car do |f| %>
-  <%= f.input :brand %>
-  <%= f.input :model %>
-  <%= f.input :year %>
-  <%= f.input :cost_per_day %>
-  <%= f.button :submit %>
+<%= simple_form_for @car, html: { class: "form" } do |f| %>
+  <div class="form-group">
+    <%= f.label :brand %>
+    <%= f.text_field :brand, class: "form-control", placeholder: "Brand" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :model %>
+    <%= f.text_field :model, class: "form-control", placeholder: "Model" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :year %>
+    <%= f.number_field :year, class: "form-control", placeholder: "Year" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :cost_per_day %>
+    <%= f.number_field :cost_per_day, class: "form-control", placeholder: "Cost per day" %>
+  </div>
+
+  <div class="text-center"> <!-- Aquí centraremos el botón -->
+    <%= f.button :submit, "Create Car", class: "btn btn-primary" %>
+  </div>
 <% end %>
