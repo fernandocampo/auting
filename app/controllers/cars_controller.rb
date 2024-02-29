@@ -11,6 +11,7 @@ class CarsController < ApplicationController
     @car = Car.new
   end
 
+  # metodo de create
   def create
     @car = Car.new(car_params)
     if @car.save
