@@ -14,7 +14,7 @@
               <% else %>
               <img class="bd-placeholder-img card-img-top" width="100" height="200" src="<%= asset_path('auto.png') %>" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
               <% end %>
-              <p><%= link_to "Vet detalle del Booking", booking_path(booking) %></p>
+              <p><%= link_to "Bookings details", booking_path(booking) %></p>
               <p><%= link_to "Edit Booking", edit_booking_path(booking) %></p>
               <p><%= button_to "Delete Booking", booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to delete this booking?" }, class: "btn btn-danger" %></p>
             </div>

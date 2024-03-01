@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
     @booking.car = @car
     @booking.user = current_user
     if @booking.save!
-      redirect_to root_path
+      redirect_to bookings_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -30,7 +30,7 @@ class BookingsController < ApplicationController
 
   def update
     if @booking.update(booking_params)
-      redirect_to my_cars_path
+      redirect_to bookings_path
     else
       render :edit, status: :unprocessable_entity
     end

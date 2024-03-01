@@ -1,5 +1,5 @@
 require 'faker'
-requiere "open uri"
+require "open-uri"
 
 
 puts 'Creating 3 usuarios personales'
