@@ -6,13 +6,24 @@
         <div class="col">
           <div class="card px-2">
             <div class="card-body">
-              <h1><%= booking.car.model %></h1>
-              <h2></h2>
-              <p></p>
-              <p><%= link_to "Edit Booking", edit_booking_path %></p>
-              <p></p>
-              <p></p>
-              <p></p>
+              <h4>Enjoy your Booked Car</h4>
+              <h3><%= booking.car.brand %></h3>
+              <h3><%= booking.car.model %></h3>
+              <% if booking.car.photo.attached? %>
+              <%= image_tag booking.car.photo, class: "bd-placeholder-img card-img-top", width: "100%", height: "180" %>
+              <% else %>
+              <img class="bd-placeholder-img card-img-top" width="100" height="200" src="<%= asset_path('auto.png') %>" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <% end %>
+              <p>Your Booking Start at:</p>
+              <p><%= booking.booking_date_start %></p>
+              <p>Your Booking Finish at:</p>
+              <p><%= booking.booking_date_finish %></p>
+              <p>Contact with:</p>
+              <p><%= booking.car.user.name %></p>
+              <p>Phone numer:</p>
+              <p><%= booking.car.user.phone %></p>
+              <p><%= link_to "Edit Booking", edit_booking_path(booking) %></p>
+              <p><%= link_to "DELETE FALTA", edit_booking_path(booking) %></p>
             </div>
           </div>
         </div>

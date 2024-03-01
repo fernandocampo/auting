@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_car, except: [:index]
+  before_action :set_car, except: [:index, :edit, :update]
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -26,7 +26,7 @@ class BookingsController < ApplicationController
 
   def update
     if @booking.update(booking_params)
-      redirect_to @booking
+      redirect_to my_cars_path
     else
       render :edit, status: :unprocessable_entity
     end

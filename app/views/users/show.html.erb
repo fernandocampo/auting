@@ -3,7 +3,7 @@
     <img class="bd-placeholder-img card-img-top" width="100%" height="180" src="<%= asset_path('blank-user.png') %>" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
     <div class="card-body">
       <h5 class="card-title"><%= @user.last_name %>, <%= @user.name %></h5>
-      <p class="card-text">Username: <%= @user.name %></p>
+      <p class="card-text">Username: <%= @user.user %></p>
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">Age: <%= @user.age %></li>
@@ -12,11 +12,11 @@
     </ul>
     <div class="card-body">
       <a href= <%= root_path %> class="card-link">Volver al Home</a>
-      <a href= <%= edit_user_registration_path %> class="card-link">Edit Profile</a>
+      <a href= <%= edit_user_registration_path %> class="card-link">Edit Profile SOLO LOGEADO</a>
     </div>
   </div>
 </div>
-<h1>My Cars</h1>
+<h1><%= @user.name %>'s Cars</h1>
 <div class="container text-center">
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
       <% @cars.each do |car| %>
@@ -30,7 +30,8 @@
               <p>📍 <%= car.user.city %></p>
               <p>U$S <%= car.cost_per_day %>0- p/day</p>
               <p>Owner: <%= link_to car.user.user, user_path(car.user) %></p>
-              <p><%= link_to "Make a Booking", new_car_booking_path(car_id: car.id) %></p>
+              <%= link_to 'Edit Car SOLO LOGEADO', edit_car_path(car), class: "card-link" %>
+              <p><%= link_to 'Borrar FALTA SOLO LOGEADO', root_path, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?' } %></p>
             </div>
           </div>
         </div>
