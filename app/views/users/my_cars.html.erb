@@ -12,7 +12,7 @@
               <p><%= car.year %></p>
               <p>📍 <%= car.user.city %></p>
               <p>U$S <%= car.cost_per_day %>0- p/day</p>
-              <p><%= link_to "Make a Booking", "#" %></p>
+              <%= link_to 'Editar', edit_car_path(car), class: "card-link" %>
             </div>
           </div>
         </div>

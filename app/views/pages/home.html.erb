@@ -1,13 +1,15 @@
-<h1>HOME</h1>
+<h1>Auting</h1>
+<h6>Rent with confidence, rent from a person like you.</h6>
 
  <%= form_with url: cars_path, method: :get, class: "my-custom-search-form" do %>
   <%= text_field_tag :query, params[:query], class: "form-control my-custom-search-input", placeholder: "" %>
   <%= button_tag "Search", type: "submit", class: "btn btn-primary my-custom-search-button" %>
 <% end %>
 
+<h1>Top 20 Cars :</h1>
 <div class="container text-center">
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
-      <% @cars.each do |car| %>
+      <% @cars.limit(20).each do |car| %>
         <div class="col">
           <div class="card px-2">
             <img class="card-img-top" src="<%= asset_path('auto.png') %>"/>
@@ -18,10 +20,10 @@
               <p>📍 <%= car.user.city %></p>
               <p>U$S <%= car.cost_per_day %>0- p/day</p>
               <p>Owner: <%= link_to car.user.user, user_path(car.user) %></p>
-              <p><%= link_to "Make a Booking", "#" %></p>
+              <p><%= link_to "Make a Booking", new_car_booking_path(car_id: car.id) %></p>
             </div>
-          </div>
-        </div>
-      <% end %>
+            </div>
+      </div>
+    <% end %>
   </div>
 </div>

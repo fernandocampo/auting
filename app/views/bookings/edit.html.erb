@@ -1,2 +1,20 @@
-<h1>Bookings#edit</h1>
-<p>Find me in app/views/bookings/edit.html.erb</p>
+<h1>Edit Booking</h1>
+<h1>Complete</h1>
+<div class="container">
+<%= simple_form_for [@car, @booking] do |f| %>
+  <%= f.input :booking_date_start %>
+  <%= f.input :booking_date_finish %>
+  <%= f.submit %>
+<% end %>
+<br>
+<br>
+<a href= <%= root_path %> class="card-link">Volver al Home</a>
+</div>
+<div class="container-2">
+  <div class="card-vehicle">
+    <h1></h1>
+    <p></p>
+    <p></p>
+  </div>
+</div>
+</div>

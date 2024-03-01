@@ -1,22 +1,32 @@
-<h1>Listado de Coches</h1>
+<h1>Resultados de la Busqueda: </h1>
+
+<h5>Volver a buscar:</h5>
+<%= form_with url: cars_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query, params[:query], class: "form-control me-2", placeholder: "Search Car" %>
+  <%= button_tag "Search", type: "submit", class: "btn btn-outline-success" %>
+<% end %>
 
 <div class="container text-center">
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
-      <% @cars.each do |car| %>
-        <div class="col">
-          <div class="card px-2">
-            <img class="card-img-top" src="<%= asset_path('auto.png') %>"/>
-            <div class="card-body">
-              <h1><%= link_to car.model, car_path(car.user) %></h1>
-              <h2><%= car.brand %></h2>
-              <p><%= car.year %></p>
-              <p>📍 <%= car.user.city %></p>
-              <p>U$S <%= car.cost_per_day %>0- p/day</p>
-              <p>Owner: <%= link_to car.user.user, user_path(car.user) %></p>
-              <p><%= link_to "Make a Booking", "#" %></p>
-            </div>
+    <% @cars.each do |car| %>
+      <div class="col">
+        <div class="card px-2">
+          <% if car.photo.attached? %>
+            <%= image_tag car.photo, class: "bd-placeholder-img card-img-top", width: "100%", height: "180" %>
+          <% else %>
+            <img class="bd-placeholder-img card-img-top" width="100%" height="180" src="<%= asset_path('auto.png') %>" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+          <% end %>
+          <div class="card-body">
+            <h5><%= link_to car.model, car_path(car) %></h5>
+            <h6><%= car.brand %></h6>
+            <p><%= car.year %></p>
+            <p>📍 <%= car.user.city %></p>
+            <p>U$S <%= car.cost_per_day %> per day</p>
+            <p>Owner: <%= link_to car.user.email, user_path(car.user) %></p>
+            <p><%= link_to "Make a Booking", "#" %></p>
           </div>
         </div>
-      <% end %>
+      </div>
+    <% end %>
   </div>
 </div>

@@ -30,7 +30,7 @@ class CarsController < ApplicationController
   def update
     @car = Car.find(params[:id])
     if @car.update(car_params)
-      redirect_to @car
+      redirect_to user_path(current_user) #car
     else
       render :edit, status: :unprocessable_entity
     end
@@ -45,6 +45,6 @@ class CarsController < ApplicationController
   private
 
   def car_params
-    params.require(:car).permit(:brand, :model, :year, :cost_per_day)
+    params.require(:car).permit(:brand, :model, :year, :cost_per_day, :photo)
   end
 end
