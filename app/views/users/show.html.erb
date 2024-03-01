@@ -12,10 +12,11 @@
     </ul>
     <div class="card-body">
       <a href= <%= root_path %> class="card-link">Volver al Home</a>
-      <a href="#" class="card-link">2</a>
+      <a href= <%= edit_user_registration_path %> class="card-link">Edit Profile</a>
     </div>
   </div>
 </div>
+<h1>My Cars</h1>
 <div class="container text-center">
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
       <% @cars.each do |car| %>
@@ -29,7 +30,7 @@
               <p>📍 <%= car.user.city %></p>
               <p>U$S <%= car.cost_per_day %>0- p/day</p>
               <p>Owner: <%= link_to car.user.user, user_path(car.user) %></p>
-              <p><%= link_to "Make a Booking", "#" %></p>
+              <p><%= link_to "Make a Booking", new_car_booking_path(car_id: car.id) %></p>
             </div>
           </div>
         </div>

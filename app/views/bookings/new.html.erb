@@ -1,4 +1,4 @@
-<h1>Bookings#new</h1>
+<h1>Make a new Booking</h1>
 <h1>Complete</h1>
 <div class="container">
 <%= simple_form_for [@car, @booking] do |f| %>
@@ -8,7 +8,7 @@
 <% end %>
 <br>
 <br>
-<%= link_to("Volver a las listas", "#") %>
+<a href= <%= root_path %> class="card-link">Volver al Home</a>
 </div>
 <div class="container-2">
   <div class="card-vehicle">
@@ -18,4 +18,3 @@
   </div>
 </div>
 </div>
-
