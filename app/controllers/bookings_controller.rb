@@ -48,7 +48,7 @@ class BookingsController < ApplicationController
   end
 
   def set_car
-    @car = Car.find(params[:car_id])
+    @car = Car.find(params[:car_id]) if params[:car_id].present?
   end
 
   def booking_params
