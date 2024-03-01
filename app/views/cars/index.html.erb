@@ -1,4 +1,10 @@
-<h1>Listado de Coches</h1>
+<h1>Resultados de la Busqueda: </h1>
+
+<h5>Volver a buscar:</h5>
+<%= form_with url: cars_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query, params[:query], class: "form-control me-2", placeholder: "Search Car" %>
+  <%= button_tag "Search", type: "submit", class: "btn btn-outline-success" %>
+<% end %>
 
 <div class="container text-center">
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
@@ -16,7 +22,7 @@
             <p><%= car.year %></p>
             <p>📍 <%= car.user.city %></p>
             <p>U$S <%= car.cost_per_day %> per day</p>
-            <p>Owner: <%= link_to car.user.email, user_path(car.user) %></p> 
+            <p>Owner: <%= link_to car.user.email, user_path(car.user) %></p>
             <p><%= link_to "Make a Booking", "#" %></p>
           </div>
         </div>
