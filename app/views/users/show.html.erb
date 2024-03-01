@@ -31,8 +31,10 @@
               <p>U$S <%= car.cost_per_day %>0- p/day</p>
               <p>Owner: <%= link_to car.user.user, user_path(car.user) %></p>
               <p><%= link_to "Make a Booking", new_car_booking_path(car_id: car.id) %></p>
-               <%= link_to "Edit", edit_car_path(car), class: "btn btn-light" %>
-               <%= button_to "Delete", car_path(car), method: :delete, data: { confirm: "Are you sure you want to delete this car?" }, class: "btn btn-danger" %>
+              <%= if current_user.id == car.user_id %>
+                <%= link_to "Edit", edit_car_path(car), class: "btn btn-light" %>
+                <%= button_to "Delete", car_path(car), method: :delete, data: { confirm: "Are you sure you want to delete this car?" }, class: "btn btn-danger" %>
+              <%= end %>
             </div>
           </div>
         </div>
