@@ -16,13 +16,9 @@
       <li class="list-group-item">Costo por Día: <%= number_to_currency(@car.cost_per_day) %></li>
     </ul>
     <div class="card-body">
-      <%= link_to 'Volver al Home', root_path, class: "card-link" %>
       <% if user_signed_in? %>
-        <br>
-        <%= link_to "Volver al Profile", my_cars_path, class: "card-link" %>
-        <br>
         <%= link_to 'Editar', edit_car_path(@car), class: "card-link" %>
-        <%= link_to 'BORRAR', "#", class: "card-link" %>
+        <%= button_to "Delete", car_path(@car), method: :delete, data: { confirm: "Are you sure you want to delete this car?" }, class: "btn btn-danger" %>
       <% end %>
     </div>
   </div>
