@@ -1,9 +1,9 @@
 <h1>Auting</h1>
 <h6>Rent with confidence, rent from a person like you.</h6>
 
-<%= form_with url: cars_path, method: :get, class: "d-flex" do %>
-  <%= text_field_tag :query, params[:query], class: "form-control me-2", placeholder: "Search Car" %>
-  <%= button_tag "Search", type: "submit", class: "btn btn-outline-success" %>
+ <%= form_with url: cars_path, method: :get, class: "my-custom-search-form" do %>
+  <%= text_field_tag :query, params[:query], class: "form-control my-custom-search-input", placeholder: "" %>
+  <%= button_tag "Search", type: "submit", class: "btn btn-primary my-custom-search-button" %>
 <% end %>
 
 <h1>Top 20 Cars :</h1>
