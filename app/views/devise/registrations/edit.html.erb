@@ -21,6 +21,10 @@
                       hint: "Leave it blank if you don't want to change it",
                       required: false,
                       input_html: { autocomplete: "new-phone", class: "form-control" } %>
+
+          <div class="form-group">
+              <%= f.input :photo, as: :file, input_html: { class: 'form-control' } %>
+          </div>
           <%= f.input :password,
                       hint: "Leave it blank if you don't want to change it",
                       required: false,
