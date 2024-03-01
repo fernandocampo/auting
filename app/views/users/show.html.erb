@@ -22,7 +22,11 @@
       <% @cars.each do |car| %>
         <div class="col">
           <div class="card px-2">
-            <img class="card-img-top" src="<%= asset_path('auto.png') %>"/>
+                <% if car.photo.attached? %>
+                  <%= image_tag car.photo, class: "bd-placeholder-img card-img-top", width: "100%", height: "180" %>
+                <% else %>
+                  <img class="bd-placeholder-img card-img-top" width="100%" height="180" src="<%= asset_path('auto.png') %>" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <% end %>
             <div class="card-body">
               <h1><%= link_to car.model, car_path(car.user) %></h1>
               <h2><%= car.brand %></h2>
@@ -31,10 +35,10 @@
               <p>U$S <%= car.cost_per_day %>0- p/day</p>
               <p>Owner: <%= link_to car.user.user, user_path(car.user) %></p>
               <p><%= link_to "Make a Booking", new_car_booking_path(car_id: car.id) %></p>
-              <%= if current_user.id == car.user_id %>
+              <% if current_user.id == car.user_id %>
                 <%= link_to "Edit", edit_car_path(car), class: "btn btn-light" %>
                 <%= button_to "Delete", car_path(car), method: :delete, data: { confirm: "Are you sure you want to delete this car?" }, class: "btn btn-danger" %>
-              <%= end %>
+              <% end %>
             </div>
           </div>
         </div>
