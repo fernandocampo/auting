@@ -2,8 +2,8 @@
 <h1>Complete</h1>
 <div class="container">
 <%= simple_form_for [@car, @booking] do |f| %>
-  <%= f.input :booking_date_start %>
-  <%= f.input :booking_date_finish %>
+  <%= f.input :booking_date_start, html5:true %>
+  <%= f.input :booking_date_finish, html5:true %>
   <%= f.submit %>
 <% end %>
 <br>
