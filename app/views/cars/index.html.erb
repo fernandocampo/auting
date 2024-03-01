@@ -22,7 +22,7 @@
             <p><%= car.year %></p>
             <p>📍 <%= car.user.city %></p>
             <p>U$S <%= car.cost_per_day %> per day</p>
-            <p>Owner: <%= link_to car.user.email, user_path(car.user) %></p>
+            <p>Owner: <%= link_to car.user.user, user_path(car.user) %></p>
             <p><%= link_to "Make a Booking", "#" %></p>
           </div>
         </div>
