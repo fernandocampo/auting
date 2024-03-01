@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :cars do
     resources :bookings, only: [:new, :create]
   end
-  resources :bookings, except: [:new, :create, :show]
+  resources :bookings, except: [:new, :create]
 
   resources :users, only: [:show]
   root to: "pages#home"
