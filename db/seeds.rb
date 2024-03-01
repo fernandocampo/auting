@@ -1,6 +1,7 @@
 require 'faker'
 require "open-uri"
 
+#prueba 2
 
 puts 'Creating 3 usuarios personales'
 fernando = User.create(
