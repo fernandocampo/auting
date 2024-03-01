@@ -2,17 +2,27 @@
 
 <div class="container">
   <div class="card" style="width: 18rem;">
-    <img class="bd-placeholder-img card-img-top" width="100%" height="180" src="<%= asset_path('auto.png') %>" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+    <% if @car.photo.attached? %>
+      <%= image_tag @car.photo, class: "bd-placeholder-img card-img-top", width: "100%", height: "180" %>
+    <% else %>
+      <img class="bd-placeholder-img card-img-top" width="100%" height="180" src="<%= asset_path('auto.png') %>" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+    <% end %>
     <div class="card-body">
-      <h5 class="card-title">Modelo:<%= @car.model %></h5>
-      <p class="card-text">Marca:</strong> <%= @car.brand %></p>
+      <h5 class="card-title">Modelo: <%= @car.model %></h5>
+      <p class="card-text">Marca: <%= @car.brand %></p>
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">Año:</strong> <%= @car.year %></li>
+      <li class="list-group-item">Año: <%= @car.year %></li>
+      <li class="list-group-item">Costo por Día: <%= number_to_currency(@car.cost_per_day) %></li>
     </ul>
     <div class="card-body">
+<<<<<<< HEAD
       <a href= <%= root_path %> class="card-link">Volver al Home</a>
       <a href= <%= new_car_booking_path(car_id: @car.id) %> class="card-link">Make a Booking</a>
+=======
+      <%= link_to 'Volver al Home', root_path, class: "card-link" %>
+      <%= link_to 'Editar', edit_car_path(@car), class: "card-link" %>
+>>>>>>> master
     </div>
   </div>
 </div>
