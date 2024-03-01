@@ -17,11 +17,13 @@
     </ul>
     <div class="card-body">
       <%= link_to 'Volver al Home', root_path, class: "card-link" %>
-      <br>
-      <%= link_to "Volver al Profile SOLO LOGEADO", my_cars_path, class: "card-link" %>
-      <br>
-      <%= link_to 'Editar SOLO LOGEADO', edit_car_path(@car), class: "card-link" %>
-      <%= link_to 'BORRAR SOLO LOGEADO', "#", class: "card-link" %>
+      <% if user_signed_in? %>
+        <br>
+        <%= link_to "Volver al Profile", my_cars_path, class: "card-link" %>
+        <br>
+        <%= link_to 'Editar', edit_car_path(@car), class: "card-link" %>
+        <%= link_to 'BORRAR', "#", class: "card-link" %>
+      <% end %>
     </div>
   </div>
 </div>
