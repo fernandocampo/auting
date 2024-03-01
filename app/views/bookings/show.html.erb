@@ -5,10 +5,10 @@
         <div class="col">
           <div class="card px-2">
             <div class="card-body">
-              <h4>Enjoy your Booked Car</h4>
+              <h4>Your Booked Car is:</h4>
               <h3><%= @booking.car.brand %></h3>
               <h3><%= @booking.car.model %></h3>
-              <% if booking.car.photo.attached? %>
+              <% if @booking.car.photo.attached? %>
               <%= image_tag @booking.car.photo, class: "bd-placeholder-img card-img-top", width: "100%", height: "180" %>
               <% else %>
               <img class="bd-placeholder-img card-img-top" width="100" height="200" src="<%= asset_path('auto.png') %>" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
@@ -20,7 +20,13 @@
               <p>Contact with:</p>
               <p><%= @booking.car.user.name %></p>
               <p>Phone numer:</p>
-              <p><%= booking.car.user.phone %></p>
+              <p><%= @booking.car.user.phone %></p>
+              <p>You will have the car:</p>
+              <%#= @booking.booking_date_finish.to_date %>
+              <%#= @booking.booking_date_start.day %>
+              <p><%= (@booking.booking_date_finish.to_date - @booking.booking_date_start.to_date).to_i %> days.</p>
+              <p>You should pay:</p>
+              <p><%=  number_to_currency((@booking.booking_date_finish.to_date - @booking.booking_date_start.to_date).to_i * @booking.car.cost_per_day) %></p>
               <p><%= link_to "Edit Booking", edit_booking_path(@booking) %></p>
               <p><%= link_to "DELETE FALTA", edit_booking_path(@booking) %></p>
             </div>

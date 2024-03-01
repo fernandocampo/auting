@@ -1,10 +1,13 @@
 class BookingsController < ApplicationController
-  before_action :set_car, except: [:index, :edit, :update]
+  before_action :set_car, except: [:index, :edit, :update, :show]
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
   def index
     @bookings = current_user.bookings
+  end
+
+  def show
   end
 
   def new
